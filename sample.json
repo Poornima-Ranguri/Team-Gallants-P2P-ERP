@@ -1,0 +1,113 @@
+{
+  "suppliers": [
+    {
+      "supplier_id": 1,
+      "name": "TechZone Inc.",
+      "contact_details": {
+        "email": "support@techzone.com",
+        "phone": "123-456-7890"
+      },
+      "payment_terms": "Net 30",
+      "rating": 4.5
+    },
+    {
+      "supplier_id": 2,
+      "name": "Office Essentials Ltd.",
+      "contact_details": {
+        "email": "sales@officeessentials.com",
+        "phone": "987-654-3210"
+      },
+      "payment_terms": "Net 15",
+      "rating": 4.7
+    }
+  ],
+  "purchase_requisitions": [
+    {
+      "requisition_id": 101,
+      "created_by": "John Doe",
+      "department": "IT",
+      "date_created": "2024-12-26",
+      "status": "Approved",
+      "items": [
+        {
+          "item_id": 1,
+          "description": "Laptop",
+          "quantity": 50,
+          "estimated_unit_price": 1000,
+          "total_estimated_price": 50000
+        }
+      ],
+      "total_amount": 50000
+    }
+  ],
+  "purchase_orders": [
+    {
+      "po_id": 201,
+      "requisition_id": 101,
+      "supplier_id": 1,
+      "date_created": "2024-12-27",
+      "status": "Pending Approval",
+      "items": [
+        {
+          "item_id": 1,
+          "description": "Laptop",
+          "quantity": 50,
+          "unit_price": 950,
+          "total_price": 47500
+        }
+      ],
+      "total_amount": 47500,
+      "delivery_date": "2024-12-31",
+      "payment_terms": "Net 30"
+    }
+  ],
+  "goods_receipts": [
+    {
+      "receipt_id": 301,
+      "po_id": 201,
+      "received_by": "Jane Smith",
+      "date_received": "2024-12-31",
+      "items": [
+        {
+          "item_id": 1,
+          "description": "Laptop",
+          "quantity_received": 50,
+          "quantity_expected": 50,
+          "status": "Accepted"
+        }
+      ]
+    }
+  ],
+  "invoices": [
+    {
+      "invoice_id": 401,
+      "po_id": 201,
+      "supplier_id": 1,
+      "invoice_date": "2024-12-31",
+      "due_date": "2025-01-30",
+      "status": "Pending Approval",
+      "items": [
+        {
+          "item_id": 1,
+          "description": "Laptop",
+          "quantity": 50,
+          "unit_price": 950,
+          "total_price": 47500
+        }
+      ],
+      "total_amount": 47500,
+      "payment_terms": "Net 30"
+    }
+  ],
+  "payments": [
+    {
+      "payment_id": 501,
+      "invoice_id": 401,
+      "supplier_id": 1,
+      "payment_date": "2025-01-28",
+      "amount_paid": 47500,
+      "payment_method": "Bank Transfer",
+      "status": "Completed"
+    }
+  ]
+}
