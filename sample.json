@@ -1,113 +1,404 @@
 {
-  "suppliers": [
+  "supplierManagement": [
     {
-      "supplier_id": 1,
-      "name": "TechZone Inc.",
-      "contact_details": {
-        "email": "support@techzone.com",
-        "phone": "123-456-7890"
-      },
-      "payment_terms": "Net 30",
-      "rating": 4.5
+      "businessName": "Alpha Supplies",
+      "contactInfo": "alpha@supplies.com, +1-555-1010",
+      "description": "Office supplies and stationery",
+      "rating": 4.5,
+      "totalPrice": 5000
     },
     {
-      "supplier_id": 2,
-      "name": "Office Essentials Ltd.",
-      "contact_details": {
-        "email": "sales@officeessentials.com",
-        "phone": "987-654-3210"
-      },
-      "payment_terms": "Net 15",
-      "rating": 4.7
+      "businessName": "Beta Tech",
+      "contactInfo": "beta@tech.com, +1-555-2020",
+      "description": "Electronic components and accessories",
+      "rating": 4.7,
+      "totalPrice": 12000
+    },
+    {
+      "businessName": "Gamma Textiles",
+      "contactInfo": "gamma@textiles.com, +1-555-3030",
+      "description": "Fabrics and textile products",
+      "rating": 4.2,
+      "totalPrice": 8000
+    },
+    {
+      "businessName": "Delta Chemicals",
+      "contactInfo": "delta@chem.com, +1-555-4040",
+      "description": "Industrial chemicals and solvents",
+      "rating": 4.0,
+      "totalPrice": 15000
+    },
+    {
+      "businessName": "Epsilon Foods",
+      "contactInfo": "epsilon@foods.com, +1-555-5050",
+      "description": "Organic food products",
+      "rating": 4.8,
+      "totalPrice": 7000
+    },
+    {
+      "businessName": "Zeta Machinery",
+      "contactInfo": "zeta@machinery.com, +1-555-6060",
+      "description": "Heavy machinery and tools",
+      "rating": 3.9,
+      "totalPrice": 25000
+    },
+    {
+      "businessName": "Eta Logistics",
+      "contactInfo": "eta@logistics.com, +1-555-7070",
+      "description": "Transportation and warehousing",
+      "rating": 4.3,
+      "totalPrice": 9000
+    },
+    {
+      "businessName": "Theta Electronics",
+      "contactInfo": "theta@electronics.com, +1-555-8080",
+      "description": "Consumer electronics",
+      "rating": 4.4,
+      "totalPrice": 15000
+    },
+    {
+      "businessName": "Iota Steel",
+      "contactInfo": "iota@steel.com, +1-555-9090",
+      "description": "Steel products and raw materials",
+      "rating": 4.1,
+      "totalPrice": 20000
+    },
+    {
+      "businessName": "Kappa Pharmaceuticals",
+      "contactInfo": "kappa@pharma.com, +1-555-1011",
+      "description": "Medical supplies and pharmaceuticals",
+      "rating": 4.6,
+      "totalPrice": 13000
     }
   ],
-  "purchase_requisitions": [
+  "purchaseRequisition": [
     {
-      "requisition_id": 101,
-      "created_by": "John Doe",
-      "department": "IT",
-      "date_created": "2024-12-26",
-      "status": "Approved",
-      "items": [
-        {
-          "item_id": 1,
-          "description": "Laptop",
-          "quantity": 50,
-          "estimated_unit_price": 1000,
-          "total_estimated_price": 50000
-        }
-      ],
-      "total_amount": 50000
+      "item": "Laptop",
+      "description": "High-performance laptop",
+      "specifications": "16GB RAM, 512GB SSD",
+      "quantity": 5,
+      "status": "Pending"
+    },
+    {
+      "item": "Printer",
+      "description": "All-in-one printer",
+      "specifications": "WiFi-enabled, duplex printing",
+      "quantity": 2,
+      "status": "Pending"
+    },
+    {
+      "item": "Paper",
+      "description": "A4 paper reams",
+      "specifications": "500 sheets per ream",
+      "quantity": 20,
+      "status": "Pending"
+    },
+    {
+      "item": "Office Chairs",
+      "description": "Ergonomic office chairs",
+      "specifications": "Adjustable height, lumbar support",
+      "quantity": 10,
+      "status": "Rejected"
+    },
+    {
+      "item": "Desk",
+      "description": "Wooden office desks",
+      "specifications": "6ft by 3ft",
+      "quantity": 8,
+      "status": "Pending"
+    },
+    {
+      "item": "Monitor",
+      "description": "24-inch monitor",
+      "specifications": "Full HD, IPS panel",
+      "quantity": 6,
+      "status": "Pending"
+    },
+    {
+      "item": "Mouse",
+      "description": "Wireless mouse",
+      "specifications": "Bluetooth-enabled, ergonomic",
+      "quantity": 10,
+      "status": "Pending"
+    },
+    {
+      "item": "Keyboard",
+      "description": "Mechanical keyboard",
+      "specifications": "Backlit, compact design",
+      "quantity": 10,
+      "status": "Rejected"
+    },
+    {
+      "item": "Projector",
+      "description": "4K projector",
+      "specifications": "3000 lumens, HDMI input",
+      "quantity": 1,
+      "status": "Pending"
+    },
+    {
+      "item": "Whiteboard",
+      "description": "Magnetic whiteboard",
+      "specifications": "4ft by 3ft",
+      "quantity": 4,
+      "status": "Pending"
     }
   ],
-  "purchase_orders": [
+  "purchaseOrder": [
     {
-      "po_id": 201,
-      "requisition_id": 101,
-      "supplier_id": 1,
-      "date_created": "2024-12-27",
-      "status": "Pending Approval",
-      "items": [
-        {
-          "item_id": 1,
-          "description": "Laptop",
-          "quantity": 50,
-          "unit_price": 950,
-          "total_price": 47500
-        }
-      ],
-      "total_amount": 47500,
-      "delivery_date": "2024-12-31",
-      "payment_terms": "Net 30"
+      "item": "Laptop",
+      "description": "High-performance laptop",
+      "specifications": "16GB RAM, 512GB SSD",
+      "quantity": 5
+    },
+    {
+      "item": "Printer",
+      "description": "All-in-one printer",
+      "specifications": "WiFi-enabled, duplex printing",
+      "quantity": 2
+    },
+    {
+      "item": "Paper",
+      "description": "A4 paper reams",
+      "specifications": "500 sheets per ream",
+      "quantity": 20
+    },
+    {
+      "item": "Desk",
+      "description": "Wooden office desks",
+      "specifications": "6ft by 3ft",
+      "quantity": 8
+    },
+    {
+      "item": "Monitor",
+      "description": "24-inch monitor",
+      "specifications": "Full HD, IPS panel",
+      "quantity": 6
+    },
+    {
+      "item": "Mouse",
+      "description": "Wireless mouse",
+      "specifications": "Bluetooth-enabled, ergonomic",
+      "quantity": 10
+    },
+    {
+      "item": "Keyboard",
+      "description": "Mechanical keyboard",
+      "specifications": "Backlit, compact design",
+      "quantity": 10
+    },
+    {
+      "item": "Projector",
+      "description": "4K projector",
+      "specifications": "3000 lumens, HDMI input",
+      "quantity": 1
+    },
+    {
+      "item": "Whiteboard",
+      "description": "Magnetic whiteboard",
+      "specifications": "4ft by 3ft",
+      "quantity": 4
+    },
+    {
+      "item": "Office Chairs",
+      "description": "Ergonomic office chairs",
+      "specifications": "Adjustable height, lumbar support",
+      "quantity": 10
     }
   ],
-  "goods_receipts": [
+  "goodsReceipt": [
     {
-      "receipt_id": 301,
-      "po_id": 201,
-      "received_by": "Jane Smith",
-      "date_received": "2024-12-31",
-      "items": [
-        {
-          "item_id": 1,
-          "description": "Laptop",
-          "quantity_received": 50,
-          "quantity_expected": 50,
-          "status": "Accepted"
-        }
-      ]
+      "item": "Laptop",
+      "specifications": "16GB RAM, 512GB SSD",
+      "quantity": 5,
+      "receivedQuantity": 5,
+      "status": "ok"
+    },
+    {
+      "item": "Printer",
+      "specifications": "WiFi-enabled, duplex printing",
+      "quantity": 2,
+      "receivedQuantity": 2,
+      "status": "ok"
+    },
+    {
+      "item": "Paper",
+      "specifications": "500 sheets per ream",
+      "quantity": 20,
+      "receivedQuantity": 20,
+      "status": "ok"
+    },
+    {
+      "item": "Desk",
+      "specifications": "6ft by 3ft",
+      "quantity": 8,
+      "receivedQuantity": 6,
+      "status": "not ok"
+    },
+    {
+      "item": "Monitor",
+      "specifications": "Full HD, IPS panel",
+      "quantity": 6,
+      "receivedQuantity": 6,
+      "status": "ok"
+    },
+    {
+      "item": "Mouse",
+      "specifications": "Bluetooth-enabled, ergonomic",
+      "quantity": 10,
+      "receivedQuantity": 10,
+      "status": "ok"
+    },
+    {
+      "item": "Keyboard",
+      "specifications": "Backlit, compact design",
+      "quantity": 10,
+      "receivedQuantity": 9,
+      "status": "not ok"
+    },
+    {
+      "item": "Projector",
+      "specifications": "3000 lumens, HDMI input",
+      "quantity": 1,
+      "receivedQuantity": 1,
+      "status": "ok"
+    },
+    {
+      "item": "Whiteboard",
+      "specifications": "4ft by 3ft",
+      "quantity": 4,
+      "receivedQuantity": 4,
+      "status": "ok"
+    },
+    {
+      "item": "Office Chairs",
+      "specifications": "Adjustable height, lumbar support",
+      "quantity": 10,
+      "receivedQuantity": 8,
+      "status": "not ok"
     }
   ],
-  "invoices": [
+  "invoiceProcessing": [
     {
-      "invoice_id": 401,
-      "po_id": 201,
-      "supplier_id": 1,
-      "invoice_date": "2024-12-31",
-      "due_date": "2025-01-30",
-      "status": "Pending Approval",
-      "items": [
-        {
-          "item_id": 1,
-          "description": "Laptop",
-          "quantity": 50,
-          "unit_price": 950,
-          "total_price": 47500
-        }
-      ],
-      "total_amount": 47500,
-      "payment_terms": "Net 30"
+      "item": "Laptop",
+      "quantity": 5,
+      "receivedQuantity": 5,
+      "status": "received",
+      "price": 5000
+    },
+    {
+      "item": "Printer",
+      "quantity": 2,
+      "receivedQuantity": 2,
+      "status": "received",
+      "price": 1000
+    },
+    {
+      "item": "Paper",
+      "quantity": 20,
+      "receivedQuantity": 20,
+      "status": "received",
+      "price": 200
+    },
+    {
+      "item": "Desk",
+      "quantity": 8,
+      "receivedQuantity": 6,
+      "status": "missing",
+      "price": 2400
+    },
+    {
+      "item": "Monitor",
+      "quantity": 6,
+      "receivedQuantity": 6,
+      "status": "received",
+      "price": 1800
+    },
+    {
+      "item": "Mouse",
+      "quantity": 10,
+      "receivedQuantity": 10,
+      "status": "received",
+      "price": 300
+    },
+    {
+      "item": "Keyboard",
+      "quantity": 10,
+      "receivedQuantity": 9,
+      "status": "missing",
+      "price": 450
+    },
+    {
+      "item": "Projector",
+      "quantity": 1,
+      "receivedQuantity": 1,
+      "status": "received",
+      "price": 1000
+    },
+    {
+      "item": "Whiteboard",
+      "quantity": 4,
+      "receivedQuantity": 4,
+      "status": "received",
+      "price": 400
+    },
+    {
+      "item": "Office Chairs",
+      "quantity": 10,
+      "receivedQuantity": 8,
+      "status": "missing",
+      "price": 3200
     }
   ],
-  "payments": [
+  "paymentProcessing": [
     {
-      "payment_id": 501,
-      "invoice_id": 401,
-      "supplier_id": 1,
-      "payment_date": "2025-01-28",
-      "amount_paid": 47500,
-      "payment_method": "Bank Transfer",
-      "status": "Completed"
+      "item": "Laptop",
+      "price": 5000,
+      "status": "paid"
+    },
+    {
+      "item": "Printer",
+      "price": 1000,
+      "status": "paid"
+    },
+    {
+      "item": "Paper",
+      "price": 200,
+      "status": "paid"
+    },
+    {
+      "item": "Desk",
+      "price": 2400,
+      "status": "not paid"
+    },
+    {
+      "item": "Monitor",
+      "price": 1800,
+      "status": "paid"
+    },
+    {
+      "item": "Mouse",
+      "price": 300,
+      "status": "paid"
+    },
+    {
+      "item": "Keyboard",
+      "price": 450,
+      "status": "not paid"
+    },
+    {
+      "item": "Projector",
+      "price": 1000,
+      "status": "paid"
+    },
+    {
+      "item": "Whiteboard",
+      "price": 400,
+      "status": "paid"
+    },
+    {
+      "item": "Office Chairs",
+      "price": 3200,
+      "status": "not paid"
     }
   ]
 }

@@ -26,20 +26,21 @@
         </svg>
         <p id="page-title">Dashboard</p>
         <ul id="menu" class="hide">
-          <li onclick="toggleSection('dashboard')">dashboard</li>
-          <li onclick="toggleSection('supplier-management')">
-            supplier-management
-          </li>
+          <li onclick="toggleSection('dashboard')">Dashboard</li>
           <li onclick="toggleSection('purchase-requisition')">
-            purchase-requisition
+            Purchase Requisition
           </li>
-          <li onclick="toggleSection('purchase-order')">purchase-order</li>
-          <li onclick="toggleSection('goods-receipt')">goods-receipt</li>
+          <li onclick="toggleSection('supplier-management')">
+            Supplier Management
+          </li>
+
+          <li onclick="toggleSection('purchase-order')">Purchase Order</li>
+          <li onclick="toggleSection('goods-receipt')">Goods Receipt</li>
           <li onclick="toggleSection('invoice-processing')">
-            invoice-processing
+            Invoice Processing
           </li>
           <li onclick="toggleSection('payment-processing')">
-            payment-processing
+            Payment Processing
           </li>
         </ul>
       </div>
@@ -62,33 +63,103 @@
     </header>
     <main>
       <section id="dashboard">
-        <div id="my-requisitions">
+        <div
+          id="my-requisitions"
+          onclick="toggleSection('purchase-requisition')"
+        >
           <p>My Requisitions</p>
+          <div>
+            <p class="number">0</p>
+            <button>Add Item</button>
+          </div>
+        </div>
+        <div id="my-purchase-orders" onclick="toggleSection('purchase-order')">
+          <p>My Purchase Orders</p>
           <p class="number">0</p>
         </div>
-        <div id="my-receipts">
+        <div id="my-receipts" onclick="toggleSection('goods-receipt')">
           <p>My Receipts</p>
           <p class="number">0</p>
         </div>
-        <div id="my-payments">
+        <div id="my-payments" onclick="toggleSection('payment-processing')">
           <p>My Payments</p>
-          <p class="number">0</p>
-        </div>
-        <div id="my-purchase-orders">
-          <p>My Purchase Orders</p>
           <p class="number">0</p>
         </div>
       </section>
       <section class="hide" id="supplier-management">
-        supplier-management
+        <table id="">
+          <thead>
+            <th>Business name</th>
+            <th>Contact Info</th>
+            <th>Description</th>
+            <th>Rating</th>
+            <!-- 1-5 -->
+            <th>Total price</th>
+          </thead>
+          <tbody></tbody>
+        </table>
       </section>
       <section class="hide" id="purchase-requisition">
-        purchase-requisition
+        <table id="">
+          <thead>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Specifications</th>
+            <th>Quantity</th>
+            <th>Status</th>
+            <!-- Pending, Rejected -->
+          </thead>
+          <tbody></tbody>
+        </table>
       </section>
-      <section class="hide" id="purchase-order">purchase-order</section>
-      <section class="hide" id="goods-receipt">goods-receipt</section>
-      <section class="hide" id="invoice-processing">invoice-processing</section>
-      <section class="hide" id="payment-processing">payment-processing</section>
+      <section class="hide" id="purchase-order">
+        <table id="">
+          <thead>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Specifications</th>
+            <th>Quantity</th>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+      <section class="hide" id="goods-receipt">
+        <table id="">
+          <thead>
+            <th>Item</th>
+            <th>Specifications</th>
+            <th>Quantity</th>
+            <th>Received Quantity</th>
+            <th>Status</th>
+            <!-- ok, not ok-->
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+      <section class="hide" id="invoice-processing">
+        <table id="">
+          <thead>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Received Quantity</th>
+            <th>Status</th>
+            <!-- recieved, missing-->
+            <th>Price</th>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+      <section class="hide" id="payment-processing">
+        <table id="">
+          <thead>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Status</th>
+            <!-- paid, not paid-->
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
     </main>
     <footer></footer>
   </body>

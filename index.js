@@ -1,9 +1,26 @@
 let current_section_str = "dashboard";
-let sample_data;
+let sample_data = false;
 
 fetch("./sample.json")
   .then((data) => data.json())
-  .then((data) => (sample_data = data));
+  .then((data) => {
+    const purchase_requisition_table_body = document.querySelector(
+      "#purchase-requisition table tbody"
+    );
+    const pr_row1 = purchase_requisition_table_body.insertRow();
+    if (data) {
+      for (const key in data) {
+        console.log(key);
+      }
+      pr_row1.insertCell().textContent = data.purchaseRequisition[0].item;
+      pr_row1.insertCell().textContent =
+        data.purchaseRequisition[0].description;
+      pr_row1.insertCell().textContent =
+        data.purchaseRequisition[0].specifications;
+      pr_row1.insertCell().textContent = data.purchaseRequisition[0].quantity;
+      pr_row1.insertCell().textContent = data.purchaseRequisition[0].status;
+    }
+  });
 
 const menu_icon = document.getElementById("menu-icon");
 menu_icon.addEventListener("click", () => {
@@ -12,8 +29,7 @@ menu_icon.addEventListener("click", () => {
 });
 
 function toggleSection(section) {
-  const current_section = document.getElementById(current_section_str);
-  current_section.classList.toggle("hide");
+  document.getElementById(current_section_str).classList.toggle("hide");
 
   switch (section) {
     case "dashboard":
@@ -50,3 +66,19 @@ function toggleSection(section) {
       break;
   }
 }
+
+const purchase_order_table_body = document.querySelector(
+  "#purchase-order table tbody"
+);
+const goods_receipt_table_body = document.querySelector(
+  "#goods-receipt table tbody"
+);
+const invoice_processing_table_body = document.querySelector(
+  "#invoice-processing table tbody"
+);
+const payment_processing_table_body = document.querySelector(
+  "#payment-processing table tbody"
+);
+const supplier_management_table_body = document.querySelector(
+  "#supplier-management table tbody"
+);
