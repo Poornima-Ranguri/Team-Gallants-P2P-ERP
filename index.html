@@ -73,29 +73,36 @@
       </div>
     </header>
     <main>
-      <section id="dashboard">
-        <div
-          id="my-requisitions"
-          onclick="toggleSection('purchase-requisition')"
-        >
-          <p>My Requisitions</p>
-          <div>
-            <p class="number">0</p>
-            <button>Add Item</button>
+      <section id="dashboard" class="dashboard">
+        <article>
+          <div
+            id="my-requisitions"
+            onclick="toggleSection('purchase-requisition')"
+          >
+            <p>My Requisitions</p>
+            <div>
+              <p class="number">10</p>
+              <button>Add Item</button>
+            </div>
           </div>
-        </div>
-        <div id="my-purchase-orders" onclick="toggleSection('purchase-order')">
-          <p>My Purchase Orders</p>
-          <p class="number">0</p>
-        </div>
-        <div id="my-receipts" onclick="toggleSection('goods-receipt')">
-          <p>My Receipts</p>
-          <p class="number">0</p>
-        </div>
-        <div id="my-payments" onclick="toggleSection('payment-processing')">
-          <p>My Payments</p>
-          <p class="number">0</p>
-        </div>
+          <div
+            id="my-purchase-orders"
+            onclick="toggleSection('purchase-order')"
+          >
+            <p>My Purchase Orders</p>
+            <p class="number">10</p>
+          </div>
+        </article>
+        <article>
+          <div id="my-receipts" onclick="toggleSection('goods-receipt')">
+            <p>My Receipts</p>
+            <p class="number">10</p>
+          </div>
+          <div id="my-payments" onclick="toggleSection('payment-processing')">
+            <p>My Payments</p>
+            <p class="number">10</p>
+          </div>
+        </article>
       </section>
       <section class="hide" id="purchase-requisition">
         <table>
