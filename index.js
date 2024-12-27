@@ -405,3 +405,14 @@ status_buttons.forEach((button) => {
     e.target.nextElementSibling.classList.toggle("hide");
   });
 });
+window.addEventListener("DOMContentLoaded", () => {
+  const profile = document.getElementById("profile-image");
+  const gettingUser = JSON.parse(localStorage.getItem("user"));
+
+  if (gettingUser && gettingUser.username) {
+    const userInitial = gettingUser.username[0];
+    profile.innerHTML = userInitial.toUpperCase();
+  } else {
+    console.log("No user data found in localStorage.");
+  }
+});
