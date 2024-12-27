@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./login.css" />
     <title>P2P ERP Login</title>
   </head>
   <body>
@@ -22,13 +23,18 @@
           <input type="password" id="password" name="password" />
         </div>
 
-        <button id="login" type="submit">Login</button>
-
-        <p>
-          Don't you have an account?
-          <a href="../sign-up/sign-up.html">Sign Up</a>
-        </p>
+        <div id="login-button-container">
+          <button id="login" type="submit">Login</button>
+          <p>
+            Don't you have an account?
+            <a href="../sign-up/sign-up.html">Sign Up</a>
+          </p>
+        </div>
       </form>
+      <div id="toast" class="toast">
+        <span class="message"></span>
+        <span class="close-btn">✕</span>
+      </div>
     </section>
     <script src="./login.js"></script>
   </body>

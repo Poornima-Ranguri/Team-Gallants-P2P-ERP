@@ -3,88 +3,142 @@
 @media screen and (max-width:786px) {
     
 
-body{
+        body{
+            
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #161925;
+            background-color: #fffffc;
+        }
+
+        header{
+            display: flex;
+            align-items: center;
+            color: #008b8b;
+            justify-content: center;
+            font-size: 10px;
+
+        }
+
+
+
+        header img{
+            width: 80px;
+            height: 80px;
+        
+        }
+
+
+
+        section{
+            box-shadow: 0px 4px 16px #bfbfbf;
+            padding: 10px;
+            border-radius: 10px;
+            width: 270px;
+            margin: 20px;
+            text-align: left;
+
+        }
+
+        section h2{
+            padding-left: 20px;
+            padding-bottom: 6px;
+        }
+
+        section div{
+            margin: 20px;
+        }
+
+
+        section div input{
+            padding: 10px;
+            border-width: 0px 0px 1px 0px;
+            border-radius: 5px;
+            width: 200px;
+            margin:3px 0px 3px 0px;
+            
+        }
+
+        .submit-sign-up-container {
+            width: 96%;
+            flex-direction: column;
+            align-items: flex-end;
+            
+        }
+
+
+        .submit-sign-up-container button{
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #008b8b;
+            color: #fffffc;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+        form div p{
+            font-size: 10px;
+            font-weight: 700;
+        }
+
     
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #161925;
-    background-color: #fffffc;
-}
-
-header{
-    display: flex;
-    align-items: center;
-    color: #008b8b;
-    justify-content: center;
-}
 
 
 
-header img{
-    width: 100px;
-    height: 100px;
-    margin: 20px;
-}
+        /* Toast Styles*/
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 3px;
+            padding: 12px 24px;
+            background-color: #1a1a1a;
+            color: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease-in-out;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
 
+        .toast.success {
+            background-color: #4CAF50;
+        }
 
+        .toast.error {
+            background-color: #f44336;
+        }
 
-section{
-    box-shadow: 0px 4px 16px #bfbfbf;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-    margin: 20px;
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-}
+        /* Animation for close button */
+        .toast .close-btn {
+            margin-left: 8px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
 
-section div{
-    display: flex;
-    
-    justify-content: space-between;
-    align-items: center;
-    margin: 10px;
-
-}
-
-
-section div input{
-    padding: 10px;
-    border: 1px solid #bfbfbf;
-    border-radius: 5px;
-    width: 200px;
-    margin-left: 10px;
-    
-}
-
-.submit-sign-up-container {
-    width: 96%;
-    flex-direction: column;
-    align-items: flex-end;
-    
-}
-
-
-.submit-sign-up-container button{
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #008b8b;
-    color: #fffffc;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-}
-    
+        .toast .close-btn:hover {
+            opacity: 1;
+        }
+            
 }
 
 
@@ -175,5 +229,60 @@ section div input{
         cursor: pointer;
         margin-top: 10px;
     }
+
+    
+
+        /* Toast Styles*/
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 24px;
+            background-color: #1a1a1a;
+            color: white;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease-in-out;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .toast.success {
+            background-color: #4CAF50;
+        }
+
+        .toast.error {
+            background-color: #f44336;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animation for close button */
+        .toast .close-btn {
+            margin-left: 8px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .toast .close-btn:hover {
+            opacity: 1;
+        }
 }    
 
+
+form div p {
+    cursor: pointer;
+}
+
+form div p a{
+    text-decoration: none;
+}

@@ -4,10 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>P2P ERP</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/p2p-logo.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="index.css" />
     <script defer src="index.js"></script>
   </head>
-  <body style="background-color: black; color: white">
+  <body>
     <header>
       <div>
         <svg
@@ -26,7 +31,9 @@
         </svg>
         <p id="page-title">Dashboard</p>
         <ul id="menu" class="hide">
-          <li onclick="toggleSection('dashboard')">Dashboard</li>
+          <li onclick="toggleSection('dashboard')" class="active-menu">
+            Dashboard
+          </li>
           <li onclick="toggleSection('purchase-requisition')">
             Purchase Requisition
           </li>
@@ -86,19 +93,6 @@
           <p class="number">0</p>
         </div>
       </section>
-      <section class="hide" id="supplier-management">
-        <table id="">
-          <thead>
-            <th>Business name</th>
-            <th>Contact Info</th>
-            <th>Description</th>
-            <th>Rating</th>
-            <!-- 1-5 -->
-            <th>Total price</th>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </section>
       <section class="hide" id="purchase-requisition">
         <table id="">
           <thead>
@@ -112,6 +106,20 @@
           <tbody></tbody>
         </table>
       </section>
+      <section class="hide" id="supplier-management">
+        <table id="">
+          <thead>
+            <th>Business name</th>
+            <th>Contact Info</th>
+            <th>Description</th>
+            <th>Rating</th>
+            <!-- 1-5 -->
+            <th>Total price</th>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
       <section class="hide" id="purchase-order">
         <table id="">
           <thead>

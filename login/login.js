@@ -2,6 +2,23 @@ const usernameElement = document.getElementById("username");
 const passwordElement = document.getElementById("password");
 const loginButtonElement = document.getElementById("login-form");
 
+function showToast(message, type) {
+  const toast = document.getElementById("toast");
+  const messageElement = toast.querySelector(".message");
+  const closeBtn = toast.querySelector(".close-btn");
+  messageElement.textContent = message;
+  toast.className = "toast";
+  toast.classList.add("show");
+  toast.classList.add(type);
+  const timeoutId = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000);
+  closeBtn.onclick = () => {
+    toast.classList.remove("show");
+    clearTimeout(timeoutId);
+  };
+}
+
 loginButtonElement.addEventListener("submit", (event) => {
   event.preventDefault();
   const username = usernameElement.value.trim();
@@ -21,15 +38,18 @@ loginButtonElement.addEventListener("submit", (event) => {
     console.log(gettingUser.username);
 
     if (gettingUser === null) {
-      alert("User not found!");
+      showToast("User not found!", "error");
     } else if (gettingUser.username !== username) {
-      alert("Username not found!");
+      showToast("Username not found!", "error");
     } else if (gettingUser.password !== password) {
-      alert("Incorrect password!");
+      showToast("Incorrect password!", "error");
     } else {
-      alert("Login successful!");
+      showToast("Login successful!", "success");
       usernameElement.value = "";
       passwordElement.value = "";
+      setTimeout(() => {
+        window.location.href = "../index.html";
+      }, 3000);
     }
   }
 });
