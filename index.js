@@ -1,6 +1,27 @@
 let current_section_str = "dashboard";
 let sample_data = false;
 
+window.onload = () => {
+  let gettingUser = JSON.parse(localStorage.getItem("user"));
+  console.log(gettingUser);
+  document.getElementById("profile-image").textContent =
+    gettingUser.username[0].toUpperCase();
+};
+
+// Select all <li> elements
+const menuItems = document.querySelectorAll(".menu-item");
+
+// Add click event listener to each <li>
+menuItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    // Remove 'active' class from all <li> elements
+    menuItems.forEach((li) => li.classList.remove("active"));
+
+    // Add 'active' class to the clicked <li>
+    item.classList.add("active");
+  });
+});
+
 // fetch("./sample.json")
 //   .then((data) => data.json())
 //   .then((data) => {
@@ -40,7 +61,7 @@ menu_icon.addEventListener("click", () => {
 });
 
 document.addEventListener("click", (event) => {
-  console.log(event.target.matches("#menu-icon"));
+  // console.log(event.target.matches("#menu-icon"));
 
   if (!event.target.matches("#menu-icon")) {
     const dropdowns = document.getElementsByClassName("dropdown-content");
