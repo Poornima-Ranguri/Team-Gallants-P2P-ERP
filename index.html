@@ -14,7 +14,7 @@
   </head>
   <body>
     <header>
-      <div>
+      <div class="dropdown">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -29,11 +29,9 @@
             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
           />
         </svg>
-        <p id="page-title">Dashboard</p>
-        <ul id="menu" class="hide">
-          <li onclick="toggleSection('dashboard')" class="active-menu">
-            Dashboard
-          </li>
+
+        <ul id="menu" class="dropdown-content">
+          <li onclick="toggleSection('dashboard')">Dashboard</li>
           <li onclick="toggleSection('purchase-requisition')">
             Purchase Requisition
           </li>
@@ -94,7 +92,7 @@
         </div>
       </section>
       <section class="hide" id="purchase-requisition">
-        <table id="">
+        <table>
           <thead>
             <th>Item</th>
             <th>Description</th>

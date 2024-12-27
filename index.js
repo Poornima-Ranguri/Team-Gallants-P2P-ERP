@@ -35,8 +35,22 @@ let sample_data = false;
 
 const menu_icon = document.getElementById("menu-icon");
 menu_icon.addEventListener("click", () => {
-  const menu = document.getElementById("menu");
-  menu.classList.toggle("hide");
+  const menu = document.getElementsByClassName("dropdown-content")[0];
+  menu.classList.toggle("show");
+});
+
+document.addEventListener("click", (event) => {
+  console.log(event.target.matches("#menu-icon"));
+
+  if (!event.target.matches("#menu-icon")) {
+    const dropdowns = document.getElementsByClassName("dropdown-content");
+    for (let i = 0; i < dropdowns.length; i++) {
+      const openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
 });
 
 //To display Purchase Requisition
@@ -45,7 +59,7 @@ function displayPurchaseRequisition(tableData, element) {
   table_element.innerHTML = "";
   for (const key in tableData) {
     let dataObject = tableData[key];
-    console.log(dataObject);
+    // console.log(dataObject);
     const row = table_element.insertRow();
     row.insertCell().textContent = dataObject.item;
     row.insertCell().textContent = dataObject.description;
@@ -143,6 +157,12 @@ function displayPaymentProcess(tableData, element) {
 
 function toggleSection(section) {
   //Fetching json Data
+
+  // const menuItems = document.querySelectorAll("#menu li");
+  // menuItems.forEach((item) => {
+  //   item.classList.remove("active-menu");
+  // });
+
   let dataArray;
   fetch("./sample.json")
     .then((data) => data.json())
@@ -182,6 +202,7 @@ function toggleSection(section) {
       switch (section) {
         case "dashboard":
           document.getElementById("dashboard").classList.toggle("hide");
+          document.getElementById("dashboard").classList.add("active-menu");
           current_section_str = "dashboard";
 
           break;
@@ -189,17 +210,25 @@ function toggleSection(section) {
           document
             .getElementById("supplier-management")
             .classList.toggle("hide");
+          document
+            .querySelector("#supplier-management")
+            .classList.add("active-menu");
           current_section_str = "supplier-management";
           displaySupplierManagement(
             supplier_management_data,
             "#supplier-management table tbody"
           );
 
+          console.log(section);
+
           break;
         case "purchase-requisition":
           document
             .getElementById("purchase-requisition")
             .classList.toggle("hide");
+          document
+            .querySelector("#purchase-requisition")
+            .classList.add("active-menu");
           current_section_str = "purchase-requisition";
           displayPurchaseRequisition(
             purchase_requisition_data,
@@ -208,6 +237,9 @@ function toggleSection(section) {
           break;
         case "purchase-order":
           document.getElementById("purchase-order").classList.toggle("hide");
+          document
+            .querySelector("#purchase-order")
+            .classList.add("active-menu");
           current_section_str = "purchase-order";
           displayPurchaseOrder(
             purchase_order_data,
@@ -216,6 +248,7 @@ function toggleSection(section) {
           break;
         case "goods-receipt":
           document.getElementById("goods-receipt").classList.toggle("hide");
+          document.querySelector("#goods-receipt").classList.add("active-menu");
           current_section_str = "goods-receipt";
           displayGoodsReceipt(goods_receipt_data, "#goods-receipt table tbody");
           break;
@@ -223,6 +256,9 @@ function toggleSection(section) {
           document
             .getElementById("invoice-processing")
             .classList.toggle("hide");
+          document
+            .querySelector("#invoice-processing")
+            .classList.add("active-menu");
           current_section_str = "invoice-processing";
           displayInvoiceProcess(
             invoice_processing_data,
@@ -233,6 +269,9 @@ function toggleSection(section) {
           document
             .getElementById("payment-processing")
             .classList.toggle("hide");
+          document
+            .querySelector("#payment-processing")
+            .classList.add("active-menu");
           current_section_str = "payment-processing";
           displayPaymentProcess(
             payment_processing_data,
