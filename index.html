@@ -4,12 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>P2P ERP</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/p2p-logo.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="index.css" />
     <script defer src="index.js"></script>
   </head>
-  <body style="background-color: black; color: white">
+  <body>
     <header>
-      <div>
+      <div class="dropdown">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -25,7 +30,7 @@
           />
         </svg>
         <p id="page-title">Dashboard</p>
-        <ul id="menu" class="hide">
+        <ul id="menu" class="dropdown-content">
           <li onclick="toggleSection('dashboard')">Dashboard</li>
           <li onclick="toggleSection('purchase-requisition')">
             Purchase Requisition
@@ -86,6 +91,27 @@
           <p class="number">0</p>
         </div>
       </section>
+      <section class="hide" id="purchase-requisition">
+        <table>
+          <thead>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Specifications</th>
+            <th>Quantity</th>
+            <th>
+              <button class="status-button">Status</button>
+              <ul class="hide">
+                <li onclick="displayPurchaseRequisition()">All</li>
+                <li onclick="displayPurchaseRequisition('Pending')">Pending</li>
+                <li onclick="displayPurchaseRequisition('Rejected')">
+                  Rejected
+                </li>
+              </ul>
+            </th>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
       <section class="hide" id="supplier-management">
         <table id="">
           <thead>
@@ -95,19 +121,6 @@
             <th>Rating</th>
             <!-- 1-5 -->
             <th>Total price</th>
-          </thead>
-          <tbody></tbody>
-        </table>
-      </section>
-      <section class="hide" id="purchase-requisition">
-        <table id="">
-          <thead>
-            <th>Item</th>
-            <th>Description</th>
-            <th>Specifications</th>
-            <th>Quantity</th>
-            <th>Status</th>
-            <!-- Pending, Rejected -->
           </thead>
           <tbody></tbody>
         </table>
@@ -130,8 +143,14 @@
             <th>Specifications</th>
             <th>Quantity</th>
             <th>Received Quantity</th>
-            <th>Status</th>
-            <!-- ok, not ok-->
+            <th>
+              <button class="status-button">Status</button>
+              <ul class="hide">
+                <li onclick="displayGoodsReceipt()">ALL</li>
+                <li onclick="displayGoodsReceipt('ok')">OK</li>
+                <li onclick="displayGoodsReceipt('not ok')">NOT OK</li>
+              </ul>
+            </th>
           </thead>
           <tbody></tbody>
         </table>
@@ -142,8 +161,15 @@
             <th>Item</th>
             <th>Quantity</th>
             <th>Received Quantity</th>
-            <th>Status</th>
-            <!-- recieved, missing-->
+            <th>
+              <button class="status-button">Status</button>
+              <ul class="hide">
+                <li onclick="displayInvoiceProcess()">All</li>
+                <li onclick="displayInvoiceProcess('received')">Recieved</li>
+                <li onclick="displayInvoiceProcess('missing')">Missing</li>
+              </ul>
+            </th>
+            <!-- , -->
             <th>Price</th>
           </thead>
           <tbody></tbody>
@@ -154,8 +180,14 @@
           <thead>
             <th>Item</th>
             <th>Price</th>
-            <th>Status</th>
-            <!-- paid, not paid-->
+            <th>
+              <button class="status-button">Status</button>
+              <ul class="hide">
+                <li onclick="displayPaymentProcess()">All</li>
+                <li onclick="displayPaymentProcess('paid')">Paid</li>
+                <li onclick="displayPaymentProcess('not paid')">Not Paid</li>
+              </ul>
+            </th>
           </thead>
           <tbody></tbody>
         </table>

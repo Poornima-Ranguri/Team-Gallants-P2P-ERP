@@ -1,11 +1,141 @@
-.hide {
+/* .hide {
+  display: none ;
+}
+
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
   display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  justify-content: flex-start;
 }
 
 .show {
-  display: block;
+  display: block !important;
+}*/
+
+.missing {
+  background-color: red;
 }
 
-#menu {
-  list-style: none;
+/* Mobile View */
+@media screen and (max-width: 768px) {
+}
+
+/* Desktop View */
+@media screen and (min-width: 768px) {
+  body {
+    background-color: #fffffc;
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 10px;
+    color: #161925;
+    box-sizing: border-box;
+  }
+
+  header {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #menu {
+    list-style: none;
+    padding-left: 6px;
+    margin: 0;
+    text-align: left;
+  }
+
+  #menu li {
+    font-size: 20px;
+    padding-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .active-menu {
+    background-color: #008b8b;
+    color: #f1f1f1;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    width: 90%;
+    margin: 5px auto;
+  }
+
+  section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* toggling */
+  .hide {
+    display: none;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    justify-content: flex-start;
+    border-radius: 10px;
+    width: 200px;
+  }
+
+  .show {
+    display: block;
+  }
+
+  /* Purchase Requistion */
+  .main {
+    width: 100vw;
+    padding: 10px 0;
+  }
+
+  #purchase-requisition {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  table {
+    width: 90%;
+    border: solid 1px #008b8b;
+    margin: 10px 20px 10px 20px;
+  }
+
+  table th {
+    background-color: #008b8b;
+    color: #fffffc;
+    padding: 10px;
+  }
+
+  table td {
+    padding: 10px;
+  }
+
+  table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
 }
