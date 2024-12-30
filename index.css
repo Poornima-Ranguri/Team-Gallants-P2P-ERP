@@ -1,7 +1,3 @@
-.missing {
-  background-color: red;
-}
-
 /* Mobile View */
 @media screen and (max-width: 768px) {
 }
@@ -18,11 +14,9 @@
   }
 
   header {
-   
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
   }
 
   #menu {
@@ -72,12 +66,10 @@
   /* Hover Effect */
   #profile-pic:hover {
     transform: scale(0.8);
-
   }
 
   #profile-image:hover {
     transform: scale(0.8);
-
   }
   /* 
   .active-menu {
@@ -158,7 +150,7 @@
   }
 
   table tr:nth-child(even) {
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
   }
 
   .dashboard {
@@ -186,5 +178,16 @@
 
   .hide {
     display: none;
+  }
+
+  #toggle-button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+  }
+
+  .missing {
+    background-color: red;
   }
 }
